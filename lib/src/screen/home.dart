@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_form_validator/src/models/hex_color.dart';
+import 'package:flutter_form_validator/src/screen/mpesa.dart';
 import 'package:flutter_form_validator/src/widget/cards.dart';
 
 import '../common.dart';
@@ -43,7 +44,10 @@ class _HomeState extends State<Home> {
                               ]
                           )),
                         ),
-                        IconButton(icon: Icon(Icons.more_vert, color: white,size: 40,), onPressed: (){})
+                        IconButton(icon: Icon(Icons.more_vert, color: white,size: 40,), onPressed: (){
+                          Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => LinaNaMpesa()));
+                        })
                       ],
                     ),
 
@@ -118,6 +122,8 @@ class _HomeState extends State<Home> {
 
                     ListTile(
                       onTap: (){
+                         Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => LinaNaMpesa()));
                         _settingModalBottomSheet(context);
                       },
                       leading: CircleAvatar(backgroundImage: AssetImage("images/p2.jpg"),),
